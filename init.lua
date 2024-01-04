@@ -44,7 +44,14 @@ P.S. You can delete this when you're done too. It's your config now :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+-- Enable relative line numbering
 vim.wo.relativenumber = true
+vim.opt.autoindent = true
+vim.opt.smartindent = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -95,7 +102,6 @@ require('lazy').setup({
       'folke/neodev.nvim',
     },
   },
-
   {
     -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -112,7 +118,6 @@ require('lazy').setup({
       'rafamadriz/friendly-snippets',
     },
   },
-
   -- Useful plugin to show you pending keybinds.
   { 'folke/which-key.nvim', opts = {} },
   {
@@ -267,7 +272,7 @@ require('lazy').setup({
   --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --
   --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -582,6 +587,11 @@ local servers = {
 }
 
 -- Setup neovim lua configuration
+vim.cmd [[
+ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
+ autocmd FileType rust setlocal shiftwidth=4 tabstop=4 expandtab
+ autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab
+]]
 require('neodev').setup()
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
