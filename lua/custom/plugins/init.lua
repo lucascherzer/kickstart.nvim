@@ -40,5 +40,5 @@ return {
 	update_n_lines = "gzn", -- Update `n_lines`
       },
     },
-  }
+  },
 }
