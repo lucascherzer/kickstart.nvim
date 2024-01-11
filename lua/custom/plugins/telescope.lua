@@ -6,7 +6,7 @@ vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 local mappings = {
   ['f'] = {
-    name = "+file",
+    name = "[F]ind with Telescope",
     ['f'] = {"<cmd>Telescope find_files<cr>", "Find Files"},
     ['b'] = {"<cmd>Telescope buffers<cr>", "Find Buffers"},
     ['g'] = {"<cmd>Telescope live_grep<cr>", "Live grep"},
