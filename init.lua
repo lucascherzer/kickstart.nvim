@@ -53,6 +53,8 @@ vim.opt.tabstop = 4
 
 vim.opt.colorcolumn = "80"
 
+vim.g.neovide_scale_factor= 1.3
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
