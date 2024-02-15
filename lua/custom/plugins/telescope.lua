@@ -14,7 +14,7 @@ local mappings = {
      -- Add more file key mappings here...
    }
 }
-local opts = {
+local which_key_opts = {
   mode = "n", -- NORMAL mode
   -- prefix: use "<leader>f" for example for mapping everything related to finding files
   -- the prefix is prepended to every mapping part of `mappings`
@@ -25,12 +25,13 @@ local opts = {
   nowait = false, -- use `nowait` when creating keymaps
   expr = false, -- use `expr` when creating keymaps
 }
-require('which-key').register(mappings, opts)
+require('which-key').register(mappings, which_key_opts)
 
 
 return {
   {
-  'nvim-telescope/telescope.nvim', tag = '0.1.5',
+  'nvim-telescope/telescope.nvim',
+    tag = '0.1.5',
     dependencies = { 'nvim-lua/plenary.nvim' }
   }
 }
