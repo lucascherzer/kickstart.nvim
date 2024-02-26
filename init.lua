@@ -1,27 +1,4 @@
 --[[
-
-=====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
-=====================================================================
-
-Kickstart.nvim is *not* a distribution.
-
-Kickstart.nvim is a template for your own configuration.
-  The goal is that you can read every line of code, top-to-bottom, understand
-  what your configuration is doing, and modify it to suit your needs.
-
-  Once you've done that, you should start exploring, configuring and tinkering to
-  explore Neovim!
-
-  If you don't know anything about Lua, I recommend taking some time to read through
-  a guide. One possible example:
-  - https://learnxinyminutes.com/docs/lua/
-
-
-  And then you can explore or search through `:help lua-guide`
-  - https://neovim.io/doc/user/lua-guide.html
-
-
 Kickstart Guide:
 
 I have left several `:help X` comments throughout the init.lua
@@ -44,16 +21,17 @@ P.S. You can delete this when you're done too. It's your config now :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Enable relative line numbering
 vim.wo.relativenumber = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 
+-- COLORSCHEME is set at the bottom of the file
 vim.opt.colorcolumn = "80"
 
 vim.g.neovide_scale_factor= 1.3
+
 -- vim.g.neovide_cursor_vfx_mode = "railgun"
 
 -- [[ Install `lazy.nvim` plugin manager ]]
@@ -203,9 +181,9 @@ require('lazy').setup({
     -- Theme inspired by Atom
     'navarasu/onedark.nvim',
     priority = 1000,
-    config = function()
-      vim.cmd.colorscheme 'onedark'
-    end,
+    -- config = function()
+    --   vim.cmd.colorscheme 'onedark'
+    -- end,
   },
 
   {
@@ -674,3 +652,6 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+-- Set color scheme
+pcall(vim.cmd, "colorscheme nord")
