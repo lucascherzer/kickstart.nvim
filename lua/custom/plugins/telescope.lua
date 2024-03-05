@@ -27,7 +27,6 @@ local which_key_opts = {
 }
 require('which-key').register(mappings, which_key_opts)
 
-
 return {
   {
   'nvim-telescope/telescope.nvim',
